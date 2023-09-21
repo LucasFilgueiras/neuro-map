@@ -4,66 +4,45 @@ import { Sidebar } from 'flowbite-react';
 
 export default function Menu() {
     return (
-        <Sidebar aria-label="Sidebar with multi-level dropdown example">
-            <Sidebar.Items>
+        <Sidebar className='fixed top-0 left-0 p-3 bg-slate-300 h-full transition ease-in-out delay-150'>
+            <Sidebar.Items className='mt-10'>
                 <Sidebar.ItemGroup>
-                    <Sidebar.Item
-                        href="#"
-                    >
-                        <p>
-                            Dashboard
-                        </p>
-                    </Sidebar.Item>
-                    <Sidebar.Collapse
+                    {/* <Sidebar.Collapse
                         label="E-commerce"
                     >
                         <Sidebar.Item href="#">
                             Products
                         </Sidebar.Item>
-                        <Sidebar.Item href="#">
-                            Sales
-                        </Sidebar.Item>
-                        <Sidebar.Item href="#">
-                            Refunds
-                        </Sidebar.Item>
-                        <Sidebar.Item href="#">
-                            Shipping
-                        </Sidebar.Item>
-                    </Sidebar.Collapse>
+                    </Sidebar.Collapse> */}
                     <Sidebar.Item
                         href="#"
                     >
-                        <p>
-                            Inbox
-                        </p>
+                        <p>Hemisfério direito</p>
                     </Sidebar.Item>
                     <Sidebar.Item
                         href="#"
                     >
-                        <p>
-                            Users
-                        </p>
+                        <p>Hemisfério esquerdo</p>
                     </Sidebar.Item>
                     <Sidebar.Item
                         href="#"
                     >
-                        <p>
-                            Products
-                        </p>
+                        <p>Lobo frontal</p>
                     </Sidebar.Item>
                     <Sidebar.Item
                         href="#"
                     >
-                        <p>
-                            Sign In
-                        </p>
+                        <p>Lobo parietal</p>
                     </Sidebar.Item>
                     <Sidebar.Item
                         href="#"
                     >
-                        <p>
-                            Sign Up
-                        </p>
+                        <p>Lobo occipital</p>
+                    </Sidebar.Item>
+                    <Sidebar.Item
+                        href="#"
+                    >
+                        <p>Lobo temporal</p>
                     </Sidebar.Item>
                 </Sidebar.ItemGroup>
             </Sidebar.Items>

@@ -2,7 +2,7 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Poppins } from 'next/font/google'
 
-const poppins = Poppins({ style: 'normal', weight: '500', subsets: ['latin'] });
+const poppins = Poppins({ style: 'normal', weight: ['500'], subsets: ['latin'] });
 
 export const metadata: Metadata = {
 	title: 'Neuro Map',
@@ -16,7 +16,9 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="pt-br">
-			<body className={poppins.className}>{children}</body>
+			<body className={poppins.className}>
+				{children}
+			</body>
 		</html>
 	)
 }
