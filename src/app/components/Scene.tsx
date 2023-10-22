@@ -26,7 +26,7 @@ export default function Scene() {
         // const material = new THREE.MeshStandardMaterial({ color: 0xFF6347 });
         // const torus = new THREE.Mesh(geometry, material);
 
-        loader.load("http://localhost:3000/brain_project.glb", function (gltf) {
+        loader.load("../../brain_project.glb", function (gltf) {
             scene.add(gltf.scene);
         }, undefined, function (error) {
             console.error(error);
