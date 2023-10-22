@@ -7,6 +7,7 @@ import Menu from "./Menu";
 import MenuOpen from "../../../public/menu-open.svg"
 import MenuClose from "../../../public/menu-close.svg"
 import "./container.css"
+import Scene from "./Scene";
 
 export default function Container({ children, title }: { children: any, title: string }) {
     const [open, setOpen] = useState(false)
@@ -19,7 +20,7 @@ export default function Container({ children, title }: { children: any, title: s
                 </header>
                 <main className="flex items-start text-justify mt-10 gap-10">
                     {children}
-                    <Image src={HumanBrain} alt="cérebro humano" className="brain" width={400} height={400} />
+                    <Scene />
                 </main>
                 <footer className="mt-10">
                     <span>Fontes: <a className="text-blue-600 underline" href="https://pubmed.ncbi.nlm.nih.gov/">https://pubmed.ncbi.nlm.nih.gov/</a> | <a className="text-blue-600 underline" href="https://www.ninds.nih.gov/">https://www.ninds.nih.gov/</a> | <a className="text-blue-600 underline" href="https://www.sfn.org/">https://www.sfn.org/</a> | <a className="text-blue-600 underline" href="https://brain.harvard.edu/">https://brain.harvard.edu/</a> | <a className="text-blue-600 underline" href="https://dana.org/">https://dana.org/</a> | <a className="text-blue-600 underline" href="https://neuroscience.berkeley.edu/">https://neuroscience.berkeley.edu/</a></span>
