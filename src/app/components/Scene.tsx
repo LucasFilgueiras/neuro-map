@@ -51,6 +51,8 @@ export default function Scene() {
 
         const controls = new OrbitControls(camera, renderer.domElement);
 
+        scene.translateY(-0.65);
+
         function animate() {
             requestAnimationFrame(animate);
 
