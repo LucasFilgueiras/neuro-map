@@ -8,7 +8,7 @@ export default function ChatGPT() {
     const [question, setQuestion] = useState("");
 
     const fetch = async () => {
-        const completion = await axios.post("http://localhost:3000/api/chatgpt", {
+        const completion = await axios.post("https://neuro-map.vercel.app/api/chatgpt", {
             question: question
         })
 
