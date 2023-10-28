@@ -3,13 +3,14 @@
 import OpenAI from "openai";
 import 'dotenv/config'
 import { useState } from "react";
+import apiKey from "../lib/utils/apiKey";
 
 export default function ChatGPT() {
     const [response, setResponse] = useState<string | null>();
     const [question, setQuestion] = useState("");
 
     const openai = new OpenAI({
-        apiKey: process.env.NEXT_PUBLIC_OPENAI_API_KEY,
+        apiKey: process.env.NEXT_PUBLIC_OPENAI_API_KEY || apiKey,
         dangerouslyAllowBrowser: true
     });
 
