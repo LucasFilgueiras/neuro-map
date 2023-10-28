@@ -1,11 +1,10 @@
 "use client"
 
 import { useEffect } from 'react';
-import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import * as THREE from 'three';
 
-export default function Scene() {
+export default function Scene2() {
 
     useEffect(() => {
         const canvas = document.querySelector(".canvas") as any;
@@ -38,15 +37,12 @@ export default function Scene() {
         const directionalLight = new THREE.DirectionalLight(0xffffbb, 0.5);
         scene.add(directionalLight);
 
-        const controls = new OrbitControls(camera, renderer.domElement);
-
         scene.translateY(-0.65);
 
         function animate() {
             requestAnimationFrame(animate);
-            scene.rotation.y += 0.0005;
-            controls.update();
-            renderer.setClearColor(0xD3D3D3);
+            scene.rotation.y += 0.005;
+            renderer.setClearColor(0xffffff);
             renderer.render(scene, camera);
         }
 
