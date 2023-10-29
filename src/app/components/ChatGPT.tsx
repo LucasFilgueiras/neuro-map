@@ -1,18 +1,24 @@
 "use client"
 
 import { useState } from "react";
-import axios from "axios";
+import OpenAI from "openai";
 
 export default function ChatGPT() {
     const [response, setResponse] = useState<any>();
     const [question, setQuestion] = useState("");
 
     const fetch = async () => {
-        const completion = await axios.post("https://neuro-map.vercel.app/api/chatgpt", {
-            question: question
-        })
-
-        setResponse(JSON.stringify(completion.data));
+        const openai = new OpenAI({
+            apiKey: process.env.NEXT_PUBLIC_OPENAI_API_KEY,
+            dangerouslyAllowBrowser: true
+        });
+            
+        const completion = await openai.chat.completions.create({
+            messages: [{ role: "user", content: question }],
+            model: "gpt-3.5-turbo",
+        });
+           
+        setResponse(completion?.choices[0].message.content)
     }
 
     return (

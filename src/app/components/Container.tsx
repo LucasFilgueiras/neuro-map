@@ -4,9 +4,9 @@ import Image from "next/image";
 import { useState } from "react";
 import Menu from "./Menu";
 import MenuOpen from "../../../public/menu-open.svg"
-import MenuClose from "../../../public/menu-close.svg"
 import "./container.css"
 import Scene from "./Scene";
+import { MdClose } from "react-icons/md";
 
 export default function Container({ children, title }: { children: any, title: string }) {
     const [open, setOpen] = useState(false)
@@ -27,8 +27,22 @@ export default function Container({ children, title }: { children: any, title: s
                     </div>
                 </main>
             </div>
-            {/* {open && <Menu />} */}
-			<Image src={open ? MenuClose : MenuOpen} alt="Menu" className={`fixed top-3 left-4 cursor-pointer hover:scale-110 transition-all`} width={30} height={30} onClick={() => setOpen(!open)} />
+            {open && <Menu />}
+			{open ?
+				<MdClose 
+					className={`fixed top-3 left-4 cursor-pointer hover:scale-110 transition-all text-white text-3xl`}
+					onClick={() => setOpen(!open)}
+				/>
+				:
+				<Image
+					src={MenuOpen} 
+					alt="Menu"
+					className={`fixed top-3 left-4 cursor-pointer hover:scale-110 transition-all`}
+					width={30}
+					height={30}
+					onClick={() => setOpen(!open)}
+				/>
+			}
         </>
     )
 }

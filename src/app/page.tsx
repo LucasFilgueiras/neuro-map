@@ -1,9 +1,8 @@
 "use client"
 
 import Image from "next/image"
-import HumanBrain from "../../public/human_brain.png"
 import MenuOpen from "../../public/menu-open.svg"
-import MenuClose from "../../public/menu-close.svg"
+import { MdClose } from "react-icons/md";
 import Menu from "./components/Menu"
 import { useState } from "react"
 import "./components/container.css"
@@ -25,8 +24,22 @@ export default function Home() {
 				<p>À esquerda, você encontrará um menu simplificado, o qual visa a facilitar a sua navegação pelo website. Ademais, as fontes relacionadas a cada conteúdo estarão disponíveis ao final de cada página.</p>
 				{/* <p>Observação: Em algumas páginas, você se deparará com um bloco de texto intitulado “Facilitador”. Esse bloco tem como objetivo oferecer uma abordagem diferenciada ao tema, fornecer informações complementares ao que foi tratado na página ou apresentar tópicos essenciais para aprimorar a compreensão do assunto em questão.</p> */}
 			</div>
-			{/* {open && <Menu />} */}
-			<Image src={open ? MenuClose : MenuOpen} alt="Menu" className={`fixed top-3 left-4 cursor-pointer hover:scale-110 transition-all`} width={30} height={30} onClick={() => setOpen(!open)} />
+			{open && <Menu />}
+			{open ?
+				<MdClose 
+					className={`fixed top-3 left-4 cursor-pointer hover:scale-110 transition-all text-white text-3xl`}
+					onClick={() => setOpen(!open)}
+				/>
+				:
+				<Image
+					src={MenuOpen} 
+					alt="Menu"
+					className={`fixed top-3 left-4 cursor-pointer hover:scale-110 transition-all`}
+					width={30}
+					height={30}
+					onClick={() => setOpen(!open)}
+				/>
+			}
 		</main>
 	)
 }

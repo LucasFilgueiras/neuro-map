@@ -44,7 +44,7 @@ export default function Scene() {
 
         function animate() {
             requestAnimationFrame(animate);
-            scene.rotation.y += 0.0005;
+            //scene.rotation.y += 0.0005;
             controls.update();
             renderer.setClearColor(0xD3D3D3);
             renderer.render(scene, camera);
